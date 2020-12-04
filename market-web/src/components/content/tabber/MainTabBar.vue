@@ -17,7 +17,7 @@
       </tab-bar-item>
 
       <!--购物车-->
-      <tab-bar-item path="/shopcart">
+      <tab-bar-item path="/cart">
         <img src="~assets/img/tabbar/shopcart.svg" alt="购物车" slot="item-icon">
         <img src="~assets/img/tabbar/shopcart_active.svg" alt="购物车" slot="item-icon-active">
         <div slot="item-text">购物车</div>
