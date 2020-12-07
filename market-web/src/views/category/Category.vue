@@ -1,9 +1,7 @@
 <template>
   <div>
 
-    <nav-bar class="category-nav-bar">
-      <div slot="center">{{title}}</div>
-    </nav-bar>
+    <category-nav :pageName="title"></category-nav>
 
     <h2>{{title}}</h2>
 
@@ -11,11 +9,13 @@
 </template>
 
 <script>
-  import NavBar from "components/common/navber/NavBar";
+
+  import CategoryNav from "./navbar/CategoryNav";
+
   export default {
     name: "Category",
     components: {
-      NavBar
+      CategoryNav
     },
     data() {
       return {

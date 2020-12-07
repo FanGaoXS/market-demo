@@ -1,20 +1,20 @@
 <template>
   <div>
 
-    <nav-bar class="cart-nav-bar">
-      <div slot="center">{{title}}({{cartNumber}})</div>
-    </nav-bar>
+    <cart-nav :pageName="title"></cart-nav>
 
     <h2>{{title}}</h2>
   </div>
 </template>
 
 <script>
-  import NavBar from "components/common/navber/NavBar";
+
+  import CartNav from "./navbar/CartNav";
+
   export default {
     name: "Cart",
     components: {
-      NavBar
+      CartNav
     },
     data() {
       return {
@@ -26,8 +26,5 @@
 </script>
 
 <style scoped>
-  .cart-nav-bar {
-    background-color: var(--color-tint);
-    color: #fff;
-  }
+
 </style>
