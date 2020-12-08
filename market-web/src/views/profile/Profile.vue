@@ -9,7 +9,7 @@
 
 <script>
 
-  import ProfileNav from "./navbar/ProfileNav";
+  import ProfileNav from "./childComponents/ProfileNav";
 
   export default {
     name: "Profile",

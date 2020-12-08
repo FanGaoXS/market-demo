@@ -1,16 +1,80 @@
 <template>
-  <div>
+  <div id="home">
 
     <!-- 顶部导航栏（将当前页面名称传递给子组件）-->
     <home-nav :pageName="title"></home-nav>
 
     <!-- 轮播图（并且将banner数组传递给子组件） -->
-    <home-swiper :bannerList="banner.list"></home-swiper>
+    <home-swiper :bannerList="bannerList"></home-swiper>
 
     <!-- 推荐流（并且将recommendList传递给子组件） -->
-    <home-recommend-view :recommendList="recommend.list"></home-recommend-view>
+    <home-recommend-view :recommendList="recommendList"></home-recommend-view>
+
+    <!-- 特征流显示 -->
+    <home-feature-view></home-feature-view>
+
+    <!-- 商品流显示 -->
+    <home-goods-view :titleList="['流行','新款','精选']"></home-goods-view>
 
     <!-- 中间内容 -->
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
+    <h2>{{title}}</h2>
     <h2>{{title}}</h2>
 
   </div>
@@ -21,26 +85,32 @@
   import HomeNav from "./childComponents/HomeNav";
   import HomeSwiper from "./childComponents/HomeSwiper";
   import HomeRecommendView from "./childComponents/HomeRecommendView";
+  import HomeFeatureView from "./childComponents/HomeFeatureView";
+  import HomeGoodsView from "./childComponents/HomeGoodsView";
 
   import {
     getHomeMultiData
   } from "network/homeRequest";
+  import GoodsView from "../../components/common/goods/GoodsView";
 
 
   export default {
     name: "Home",
     components: {
+      GoodsView,
       HomeNav,
       HomeSwiper,
-      HomeRecommendView
+      HomeRecommendView,
+      HomeFeatureView,
+      HomeGoodsView
     },
     data() {
       return {
         title: '主页',
-        banner: null,
-        dKeyword: null,
-        keyword: null,
-        recommend: null,
+        bannerList: [],
+        dKeywordList: [],
+        keywordList: [],
+        recommendList: [],
       }
     },
     // 生命周期函数：created（组件被创建时调用）
@@ -50,15 +120,20 @@
       // （也可以利用that先获取到this的方式）
       getHomeMultiData().then(res => {
         // 将res.data中的数据分别赋值给组件中的数据
-        this.banner=res.data.banner;
-        this.dKeyword=res.data.dKeyword;
-        this.keyword=res.data.keywords;
-        this.recommend=res.data.recommend;
+        this.bannerList=res.data.banner.list;
+        this.dKeywordList=res.data.dKeyword.list;
+        this.keywordList=res.data.keywords.list;
+        this.recommendList=res.data.recommend.list;
       });
     }
   }
 </script>
 
 <style scoped>
+  /* 将home组件整体下拉44px，免得覆盖顶部导航栏 */
+  #home {
+    padding-top: 44px;
+  }
+
 
 </style>

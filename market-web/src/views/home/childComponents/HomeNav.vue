@@ -1,4 +1,4 @@
-<template>
+<template><!-- 主页顶部导航栏 -->
   <div>
     <nav-bar class="home-nav-bar">
       <div slot="center">{{pageName}}</div>
@@ -8,7 +8,7 @@
 
 <script>
 
-  import NavBar from "components/common/navber/NavBar";
+  import NavBar from "components/common/navbar/NavBar";
 
   export default {
     name: "HomeNav",

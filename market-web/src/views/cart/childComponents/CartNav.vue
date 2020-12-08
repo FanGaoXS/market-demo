@@ -1,17 +1,17 @@
 <template>
   <div>
-    <nav-bar class="category-nav-bar">
-      <div slot="center">{{pageName}}</div>
+    <nav-bar class="cart-nav-bar">
+      <div slot="center">{{pageName}}({{0}})</div>
     </nav-bar>
   </div>
 </template>
 
 <script>
 
-  import NavBar from "components/common/navber/NavBar";
+  import NavBar from "components/common/navbar/NavBar";
 
   export default {
-    name: "CategoryNav",
+    name: "CartNav",
     props: {
       pageName: {
         type: String,
@@ -25,7 +25,7 @@
 </script>
 
 <style scoped>
-  .category-nav-bar {
+  .cart-nav-bar {
     background-color: var(--color-tint);
     color: #fff;
   }

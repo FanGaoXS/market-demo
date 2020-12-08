@@ -10,7 +10,7 @@
 
 <script>
 
-  import CategoryNav from "./navbar/CategoryNav";
+  import CategoryNav from "./childComponents/CategoryNav";
 
   export default {
     name: "Category",

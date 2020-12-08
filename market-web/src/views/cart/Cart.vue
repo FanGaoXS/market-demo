@@ -9,7 +9,7 @@
 
 <script>
 
-  import CartNav from "./navbar/CartNav";
+  import CartNav from "./childComponents/CartNav";
 
   export default {
     name: "Cart",

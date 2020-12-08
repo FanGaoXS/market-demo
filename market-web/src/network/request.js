@@ -36,7 +36,7 @@ function request(config) {
 }
 
 // 第二个请求
-function request2() {
+function request2(config) {
 
 }
 

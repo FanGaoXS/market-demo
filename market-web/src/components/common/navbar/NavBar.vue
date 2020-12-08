@@ -30,6 +30,14 @@
     height: 44px;
     line-height: 44px;
     text-align: center;
+
+    /* 导航栏固定到页面顶部 */
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    /* 提高导航栏的层级（到最顶层，否则会被覆盖） */
+    z-index: 9;
   }
 
   /* 导航栏左右占位 */

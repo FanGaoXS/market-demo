@@ -8,7 +8,7 @@
 
 <script>
 
-  import NavBar from "components/common/navber/NavBar";
+  import NavBar from "components/common/navbar/NavBar";
 
   export default {
     name: "ProfileNav",

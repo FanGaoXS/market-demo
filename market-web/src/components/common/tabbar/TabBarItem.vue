@@ -78,7 +78,7 @@
 
   /* item文字样式 */
   .item-text-active {
-    color: #13227a;
+    color: var(--color-tint);
   }
 
 </style>

@@ -1,4 +1,4 @@
-<template>
+<template><!-- 主页推荐流 -->
   <div class="recommend">
     <div v-for="item in recommendList" class="recommend-item">
       <a :href="item.link">
