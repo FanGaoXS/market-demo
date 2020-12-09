@@ -11,6 +11,13 @@ function getHomeMultiData() {
   return request(config);
 }
 
+// 主页里获取商品数据（根据商品类型页码）
+function getHomeGoods() {
+  let config={
+    url: '/home/data'
+  }
+}
+
 // 将对象导出
 export {
   getHomeMultiData,

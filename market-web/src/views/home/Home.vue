@@ -13,8 +13,8 @@
     <!-- 特征流显示 -->
     <home-feature-view></home-feature-view>
 
-    <!-- 商品流显示 -->
-    <home-goods-view :titleList="['流行','新款','精选']"></home-goods-view>
+    <!-- 商品流切换栏 -->
+    <tab-control :titleList="['流行','新款','精选']"></tab-control>
 
     <!-- 中间内容 -->
     <h2>{{title}}</h2>
@@ -65,18 +65,6 @@
     <h2>{{title}}</h2>
     <h2>{{title}}</h2>
     <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-    <h2>{{title}}</h2>
-
   </div>
 </template>
 
@@ -86,23 +74,23 @@
   import HomeSwiper from "./childComponents/HomeSwiper";
   import HomeRecommendView from "./childComponents/HomeRecommendView";
   import HomeFeatureView from "./childComponents/HomeFeatureView";
-  import HomeGoodsView from "./childComponents/HomeGoodsView";
+
+  import TabControl from "components/common/tabControl/TabControl";
 
   import {
     getHomeMultiData
   } from "network/homeRequest";
-  import GoodsView from "../../components/common/goods/GoodsView";
+
 
 
   export default {
     name: "Home",
     components: {
-      GoodsView,
       HomeNav,
       HomeSwiper,
       HomeRecommendView,
       HomeFeatureView,
-      HomeGoodsView
+      TabControl
     },
     data() {
       return {
@@ -130,10 +118,16 @@
 </script>
 
 <style scoped>
+
   /* 将home组件整体下拉44px，免得覆盖顶部导航栏 */
   #home {
     padding-top: 44px;
   }
 
+  /* tab-control滑动到一定位置停下 */
+  .tab-control {
+    position: sticky;
+    top: 44px;
+  }
 
 </style>
